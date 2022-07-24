@@ -9,8 +9,11 @@
 <body>
     <H1>Welcome to PetFax</H1>
     {% for pet in pets %}
-        <H2>{{ pet.pet_name }}</H2>
-        <img src="{{ pet.pet_photo }}"/>
+        <div class="pet">
+            <H2>{{ pet.pet_name }}</H2>
+            <img src="{{ url_for('static', filename='assets/') }}{{pet.pet_photo}}"/>
+            <a href="/main/{{ pet.pet_id }}">For Fun Facts, Click Here!</a>
+        </div>
     {% endfor %}
 </body>
 </html>
