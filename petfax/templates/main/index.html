@@ -7,13 +7,23 @@
     <title>PetFax</title>
 </head>
 <body>
-    <H1>Welcome to PetFax</H1>
-    {% for pet in pets %}
-        <div class="pet">
-            <H2>{{ pet.pet_name }}</H2>
-            <img src="{{ url_for('static', filename='assets/') }}{{pet.pet_photo}}"/>
-            <a href="/main/{{ pet.pet_id }}">For Fun Facts, Click Here!</a>
+    <div class="main-container">
+        <H1>PetFax</H1>
+        <div class="announcements">
+            Welcome to PetFax! We are a no-kill shelter dedicated to finding our pets loving homes and educating the public with fun facts.
         </div>
-    {% endfor %}
+        <div class="pets-container">
+            {% for pet in pets %}
+            <div class="pet">
+                <H2>{{ pet.pet_name }}</H2>
+                <img src="{{ url_for('static', filename='assets/') }}{{pet.pet_photo}}"/>
+                <a href="/main/{{ pet.pet_id }}">For Fun Facts, Click Here!</a>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="announcements">
+            We'd love to learn more fun facts! <a href="/details/addPetFacts">Add pet facts...</a>
+        </div>
+    </div>
 </body>
 </html>
