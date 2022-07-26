@@ -40,5 +40,34 @@
 #### Expected functionality
 * See image file:
 * * lessons-ppp-5-static-files-and-styling-Activity.2.png
-
-
+* Once you've successfully implemented the above two pages, this is what your app may look like.
+## Learn About Static Files
+* While it's great we've added more functionality, our app still looks quite bland.
+* We should probably add some styling.
+* To do so, technically we could use the <style type="text/css"> tag in the head of our HTML file.
+* However, you can imagine how that could get unruly, especially if we created more views.
+* If we did that, we'd have to copy and paste the entire style tag and its CSS rules into each individual file.
+* Not only is that not DRY, it would mean that any time we want to make a change to the CSS, we would have to make that change in every single file.
+* Not very fun or efficient.
+* Luckily, we can avoid that by using static files.
+* Read through this section on static files in the Flask docs to learn about them.
+### Static Files
+* Dynamic web applications also need static files.
+* That’s usually where the CSS and JavaScript files are coming from.
+* Ideally your web server is configured to serve them for you, but during development Flask can do that as well.
+* Just create a folder called static in your package or next to your module and it will be available at /static on the application.
+* To generate URLs for static files, use the special 'static' endpoint name: url_for('static', filename='style.css')
+* * The file has to be stored on the filesystem as static/style.css.
+## Using Static Files
+* Once you've learned about static files, try creating your own to add styling.
+### Create a style.css file
+1. Create a static folder within the petfax folder.
+2. In that folder, create a style.css file.
+3. Add a simple CSS rule in the file, like adding a background color to the body.
+4. In all your HTML templates, link your style.css using the static file syntax you just learned about.
+* Note: You may need to restart your Flask server for the changes to take effect.
+5. Once you've successfully linked your file, have fun with some styling!
+* Feel free to style as much or as little as you want.
+### Style inspiration
+* Want some style inspiration? Here's one example.
+* If you would like to use this styling, take a look at the CSS and HTML in the part4 branch of the repository.
